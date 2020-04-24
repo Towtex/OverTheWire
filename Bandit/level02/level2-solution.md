@@ -1,4 +1,4 @@
-- check the directory with ```ls``` and a dash(-) is found
+- check the directory with ```ls``` and a dash(-) file is found
 - to read a dash(-) file we can use ```cat``` with ```./``` or ```<``` 
   
 ```

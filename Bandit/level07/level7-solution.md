@@ -16,6 +16,7 @@ bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | gr
 >1 means stdout(useful output)
 >2 means stderr(error message output)
 >```
+>ref: https://askubuntu.com/questions/350208/what-does-2-dev-null-mean
 
 - `cat`
 ```

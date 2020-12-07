@@ -1,5 +1,5 @@
 - ran `ls` and found a file named **spaces in this filename**
-- if filename has spaces, we can `cat` this with sigle quotes (') or double quotes (")
+- if filename has spaces, we can `cat` this with single quotes (') or double quotes (")
 
 ``` 
 bandit2@bandit:~$ ls

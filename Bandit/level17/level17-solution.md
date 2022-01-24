@@ -80,10 +80,9 @@ Save the private key and give the permissions of 600.
 - `chmod`
 
 ```
-┌──(jinx㉿maverick)-[~/GitHub/OverTheWire/Bandit/level17]
-└─$ chmod 600 sshkey.private  
+$ chmod 600 sshkey.private  
 ```
 
 ```
-ssh -i your/path/sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
+ssh -i path/to/sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
 ```

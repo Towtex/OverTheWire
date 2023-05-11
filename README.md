@@ -8,7 +8,7 @@ Contents
 
 The wargames included in this repository are:
 
-1. [Bandit](master/Bandit)
+1. [Bandit](Bandit)
 2. ...
 3. ...
 

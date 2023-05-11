@@ -5,13 +5,23 @@
 bandit2@bandit:~$ ls
 spaces in this filename
 ```
+
 ```
 bandit2@bandit:~$ cat 'spaces in this filename'
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 ```
+
 OR
+
 ```
 bandit2@bandit:~$ cat "spaces in this filename"
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 ```
+
+OR
+
+```
+bandit2@bandit:~$ cat spaces\ in\ this\ filename
+```
+
 - we got the password for the next level

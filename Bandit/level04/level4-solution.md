@@ -25,9 +25,11 @@ drwxr-xr-x 3 root    root    4096 Oct 16  2018 ..
 
 ```
 bandit3@bandit:~$ cat inhere/.hidden
-pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 ```
 
-- use this password for the next level
+Password: `2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe`
+
 ```
 ssh bandit4@bandit.labs.overthewire.org -p 2220
+```

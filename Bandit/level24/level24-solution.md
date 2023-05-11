@@ -118,4 +118,6 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 
 Password: `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
 
-`ssh bandit24@bandit.labs.overthewire.org -p 2220`
+```
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+```

@@ -31,7 +31,7 @@ drwxr-xr-x 3 root    root    4096 Oct 16  2018 ..
 - `cat`
 ```
 bandit4@bandit:~/inhere$ cat <-file07
-koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 ```
 
 OR

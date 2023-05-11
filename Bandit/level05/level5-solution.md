@@ -27,11 +27,21 @@ drwxr-xr-x 3 root    root    4096 Oct 16  2018 ..
 -rw-r----- 1 bandit5 bandit4   33 Oct 16  2018 -file08
 -rw-r----- 1 bandit5 bandit4   33 Oct 16  2018 -file09
 ```
-- `cat <`
+
+- `cat`
 ```
 bandit4@bandit:~/inhere$ cat <-file07
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
+
+OR
+
+```
+bandit4@bandit:~/inhere$ cat ./-file07
+lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+```
+
+Password: `lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR`
 
 ```
 ssh bandit5@bandit.labs.overthewire.org -p 2220

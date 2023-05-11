@@ -1,4 +1,4 @@
-[OverTheWire Wargames Walkthroughs](https://overthewire.org/wargames)
+OverTheWire Wargames Walkthroughs
 =====
 
 This repository contains my solutions for wargames hosted on [OverTheWire](https://overthewire.org/wargames), a collection of wargames that help you learn about various aspects of cybersecurity. The wargames on the website cover topics such as Linux command-line tools, web application security, binary exploitation, cryptography, reverse engineering, and network security.

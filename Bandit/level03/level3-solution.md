@@ -22,6 +22,11 @@ OR
 
 ```
 bandit2@bandit:~$ cat spaces\ in\ this\ filename
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 ```
 
-- we got the password for the next level
+Password: `aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG`
+
+```
+ssh bandit3@bandit.labs.overthewire.org -p 2220
+```

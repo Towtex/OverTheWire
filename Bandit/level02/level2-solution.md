@@ -3,12 +3,12 @@
   
 ```
 bandit1@bandit:~$ cat ./-
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
 ```
 OR
 ```
 bandit1@bandit:~$ cat <-
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
 ```
 
 - use this password to login to the next level

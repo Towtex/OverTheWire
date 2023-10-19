@@ -1,17 +1,22 @@
+# Level 4 -> Level 5 (Solution)
+
 - `ls`
-```
+
+```bash
 bandit4@bandit:~$ ls
 inhere
 ```
 
 - `cd`
-```
+
+```bash
 bandit4@bandit:~$ cd inhere
 bandit4@bandit:~/inhere$
 ```
 
 - `ls -la`
-```
+
+```bash
 bandit4@bandit:~/inhere$ ls -la
 total 48
 drwxr-xr-x 2 root    root    4096 Oct 16  2018 .
@@ -31,12 +36,13 @@ drwxr-xr-x 3 root    root    4096 Oct 16  2018 ..
 We can check a file whether it's human-readable or not with `file` command.
 
 - `file`
-```
+
+```bash
 bandit4@bandit:~/inhere$ file ./-file00
 ./-file00: data
 ```
 
-But it's so boring to check all the files manually. So, we will use the `find` command with the `-type` and `-exec` options along with the `file` command.
+But it's so unefficient to check all the files manually. So, we will use the `find` command with the `-type` and `-exec` options along with the `file` command.
 
 - `find . -type f -exec sh -c 'file "$0" | grep -q "text"' {} \; -print`
 
@@ -48,13 +54,13 @@ Finally, the `-print` option is used to print the filename of each human-readabl
 
 Note that this command may produce false positives, as some non-text files (such as HTML or XML files) may also be considered human-readable by the `file` command. To exclude these files, you can modify the `grep` command to look for a specific type of text file, such as "ASCII text" or "UTF-8 Unicode text".
 
-```
+```bash
 bandit4@bandit:~/inhere$ find . -type f -exec sh -c 'file "$0" | grep -q "text"' {} \; -print
 ./-file07
 ./-file09
 ```
 
-```
+```bash
 bandit4@bandit:~/inhere$ file ./-file07
 ./-file07: ASCII text
 bandit4@bandit:~/inhere$ cat ./-file07
@@ -67,20 +73,22 @@ bandit4@bandit:~/inhere$ cat ./-file09
 ```
 
 - `cat`
-```
+
+```bash
 bandit4@bandit:~/inhere$ cat <-file07
 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 ```
 
 OR
 
-```
+```bash
 bandit4@bandit:~/inhere$ cat ./-file07
 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 ```
 
-Password: `lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR`
+Password:
+`lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR`
 
-```
+```bash
 ssh bandit5@bandit.labs.overthewire.org -p 2220
 ```

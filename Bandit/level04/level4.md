@@ -1,7 +1,9 @@
-## Level 3 -> Level 4
+# Level 3 -> Level 4
 
-### Level Goal
+## Level Goal
+
 The password for the next level is stored in a hidden file in the **inhere** directory.
 
-### Commands you may need to solve this level
+## Commands you may need to solve this level
+
 `ls, cd, cat, file, du, find`

@@ -1,8 +1,12 @@
+# Level 6 -> Level 7 (Solution)
+
 - `find`
-```
+
+```bash
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | grep "bandit7"
 /var/lib/dpkg/info/bandit7.password
 ```
+
 `find`: This is the command we are running.
 
 `/`: This specifies the starting directory for the search. In this case, we are searching the entire file system.
@@ -26,21 +30,26 @@ So all together, this command searches the entire file system for files owned by
 >Further, **2>** means that you are redirecting (i.e. >) the **stderr** (i.e. 2) into the black hole (i.e. /dev/null)
 >
 >Other things that we must know
->```
+>
+>```text
 >0 means stdin 
 >1 means stdout(useful output)
 >2 means stderr(error message output)
 >```
->ref: https://askubuntu.com/questions/350208/what-does-2-dev-null-mean
+>
+>ref: <https://askubuntu.com/questions/350208/what-does-2-dev-null-mean>
 
 - `cat`
-```
+
+```bash
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
 z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
 ```
 
-Password: `z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S`
+Password:
 
-```
+`z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S`
+
+```bash
 ssh bandit7@bandit.labs.overthewire.org -p 2220
 ```

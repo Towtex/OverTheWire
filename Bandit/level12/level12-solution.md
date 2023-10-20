@@ -1,15 +1,19 @@
+# Level 11 -> Level 12 (Solution)
+
 - `cat`
-```
+
+```bash
 bandit11@bandit:~$ cat data.txt
-Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi
 ```
 
 - `tr`
-```
-bandit11@bandit:~$ cat data.txt | tr '[a-z]' '[n-za-m]' | tr '[A-Z]' '[N-ZA-M]'
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+```bash
+bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
 ```
 
-```
+```bash
 ssh bandit12@bandit.labs.overthewire.org -p 2220
 ```

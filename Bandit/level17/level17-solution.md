@@ -1,44 +1,58 @@
+# Level 16 -> Level 17 (Solution)
+
 - `nmap`
 
-```
+```bash
 bandit16@bandit:~$ nmap -sC -sV -p 31000-32000 localhost
 
-Starting Nmap 7.40 ( https://nmap.org ) at 2020-12-10 15:33 CET
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-10-24 04:14 UTC
 Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00030s latency).
+Host is up (0.00015s latency).
 Not shown: 996 closed ports
 PORT      STATE SERVICE     VERSION
 31046/tcp open  echo
 31518/tcp open  ssl/echo
 | ssl-cert: Subject: commonName=localhost
 | Subject Alternative Name: DNS:localhost
-| Not valid before: 2020-11-04T15:24:27
-|_Not valid after:  2021-11-04T15:24:27
-|_ssl-date: TLS randomness does not represent time
+| Not valid before: 2023-10-23T04:38:45
+|_Not valid after:  2023-10-23T04:39:45
 31691/tcp open  echo
 31790/tcp open  ssl/unknown
 | fingerprint-strings: 
-|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq: 
+|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, Kerberos, LDAPSearchReq, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
 |_    Wrong! Please enter the correct current password
 | ssl-cert: Subject: commonName=localhost
 | Subject Alternative Name: DNS:localhost
-| Not valid before: 2020-12-03T12:25:02
-|_Not valid after:  2021-12-03T12:25:02
-|_ssl-date: TLS randomness does not represent time
+| Not valid before: 2023-10-23T04:38:44
+|_Not valid after:  2023-10-23T04:39:44
 31960/tcp open  echo
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port31790-TCP:V=7.40%T=SSL%I=7%D=12/10%Time=5FD231BD%P=x86_64-pc-linux-
-...
-...
-...
+SF-Port31790-TCP:V=7.80%T=SSL%I=7%D=10/24%Time=653744BC%P=x86_64-pc-linux-
+SF:gnu%r(GenericLines,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20c
+SF:urrent\x20password\n")%r(GetRequest,31,"Wrong!\x20Please\x20enter\x20th
+SF:e\x20correct\x20current\x20password\n")%r(HTTPOptions,31,"Wrong!\x20Ple
+SF:ase\x20enter\x20the\x20correct\x20current\x20password\n")%r(RTSPRequest
+SF:,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20password
+SF:\n")%r(Help,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\
+SF:x20password\n")%r(SSLSessionReq,31,"Wrong!\x20Please\x20enter\x20the\x2
+SF:0correct\x20current\x20password\n")%r(TerminalServerCookie,31,"Wrong!\x
+SF:20Please\x20enter\x20the\x20correct\x20current\x20password\n")%r(TLSSes
+SF:sionReq,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\x20p
+SF:assword\n")%r(Kerberos,31,"Wrong!\x20Please\x20enter\x20the\x20correct\
+SF:x20current\x20password\n")%r(FourOhFourRequest,31,"Wrong!\x20Please\x20
+SF:enter\x20the\x20correct\x20current\x20password\n")%r(LPDString,31,"Wron
+SF:g!\x20Please\x20enter\x20the\x20correct\x20current\x20password\n")%r(LD
+SF:APSearchReq,31,"Wrong!\x20Please\x20enter\x20the\x20correct\x20current\
+SF:x20password\n")%r(SIPOptions,31,"Wrong!\x20Please\x20enter\x20the\x20co
+SF:rrect\x20current\x20password\n");    
 ```
 
 Two ports (31518 and 31790) which speak *ssl* are found. The former with *echo protocol* will send back an identical copy of the data it received. But the latter returns an error message instead of the copy of the data it received. So 31790 may be the correct port.
 
 - `echo, openssl, s_client`
 
-```
-bandit16@bandit:~$ echo "cluFn7wTiGryunymYOu4RcffSxQluehd" | openssl s_client -ign_eof -connect localhost:31790
+```bash
+bandit16@bandit:~$ echo "JQttfApK4SeyHwDlI9SXGR50qclOAil1" | openssl s_client -ign_eof -connect localhost:31790
 CONNECTED(00000003)
 ...
 ...
@@ -79,10 +93,10 @@ Save the private key and give the permissions of 600.
 
 - `chmod`
 
-```
-$ chmod 600 sshkey.private  
+```bash
+└─$ chmod 600 sshkey.private  
 ```
 
-```
+```bash
 ssh -i path/to/sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
 ```

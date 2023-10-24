@@ -1,11 +1,13 @@
+# Level 17 -> Level 18 (Solution)
+
 - `diff`
 
-```
+```bash
 bandit17@bandit:~$ diff passwords.new passwords.old 
 42c42
-< kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+< hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
 ---
-> w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+> p6ggwdNHncnmCNxuAt0KtKVq185ZU7AW
 ```
 
-The password for the next level is **`kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd`**
+The password for the next level is `hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg`.
